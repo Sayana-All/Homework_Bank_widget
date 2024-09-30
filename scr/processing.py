@@ -1,11 +1,8 @@
-from typing import Iterable, Callable
-
-from black import Union
-from mypy.types import AnyType
+from typing import Any
 
 
-def filter_by_state(my_list: Iterable[list[dict]], user_state: str) -> Iterable[list]:
-    """Функция, которая фильтрует список словарей по указанному ключу и возвращает новый список словарей, у которых ключ совпадает с указанным"""
+def filter_by_state(my_list: list[dict[str, Any]], user_state: str = "EXECUTED") -> list[dict[Any, Any]]:
+    """Функция, которая фильтрует список словарей по указанному ключу"""
     sorted_list = []
     for i in my_list:
         if i["state"] == user_state:
@@ -13,7 +10,7 @@ def filter_by_state(my_list: Iterable[list[dict]], user_state: str) -> Iterable[
     return sorted_list
 
 
-def sort_by_date(my_list: Iterable[list[dict]], sorting_method=False) -> Iterable[list]:
+def sort_by_date(my_list: list[dict[str, Any]], sorting_method: bool = False) -> list[dict[str, Any]]:
     """Функция сортировки списка словарей по дате (по умолчанию - убывание)"""
     sorted_list = sorted(my_list, key=lambda x: x["date"], reverse=not sorting_method)
     return sorted_list
@@ -26,5 +23,5 @@ new_list = [
     {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
 ]
 
-print(filter_by_state(new_list, "EXECUTED"))
+print(filter_by_state(new_list, "CANCELED"))
 print(sort_by_date(new_list, sorting_method=True))
