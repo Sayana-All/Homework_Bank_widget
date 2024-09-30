@@ -10,9 +10,9 @@ def filter_by_state(my_list: list[dict[str, Any]], user_state: str = "EXECUTED")
     return sorted_list
 
 
-def sort_by_date(my_list: list[dict[str, Any]], sorting_method: bool = False) -> list[dict[str, Any]]:
+def sort_by_date(my_list: list[dict[str, Any]], sorting_method: bool = True) -> list[dict[str, Any]]:
     """Функция сортировки списка словарей по дате (по умолчанию - убывание)"""
-    sorted_list = sorted(my_list, key=lambda x: x["date"], reverse=not sorting_method)
+    sorted_list = sorted(my_list, key=lambda x: x["date"], reverse=sorting_method)
     return sorted_list
 
 
@@ -23,5 +23,8 @@ new_list = [
     {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
 ]
 
+print(filter_by_state(new_list))
 print(filter_by_state(new_list, "CANCELED"))
-print(sort_by_date(new_list, sorting_method=True))
+
+print(sort_by_date(new_list, sorting_method=False))
+print(sort_by_date(new_list))
