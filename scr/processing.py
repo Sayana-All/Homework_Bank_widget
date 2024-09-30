@@ -27,4 +27,4 @@ new_list = [
 ]
 
 print(filter_by_state(new_list, "EXECUTED"))
-print(sort_by_date(new_list))
+print(sort_by_date(new_list, sorting_method=True))
