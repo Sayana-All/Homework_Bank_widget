@@ -8,4 +8,3 @@ def get_mask_account(account_number: int) -> str:
     """Функция маскировки номера банковского счета"""
     mask_account = str(account_number)
     return f"**{mask_account[-4:]}"
-
