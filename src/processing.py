@@ -7,10 +7,6 @@ def filter_by_state(data: list[dict[str, Any]], user_state: str = "EXECUTED") ->
     for i in data:
         if i["state"] == user_state:
             sorted_list.append(i)
-
-    #if user_state not in data[1]["state"]:
-    #    raise ValueError("Ключ не найден!")
-
     return sorted_list
 
 
