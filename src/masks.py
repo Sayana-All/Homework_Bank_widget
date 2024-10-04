@@ -1,4 +1,4 @@
-def get_mask_card_number(card_number: int) -> str:
+def get_mask_card_number(card_number: int | str) -> str:
     """Функция маскировки номера банковской карты"""
     mask_number = str(card_number)
     if mask_number.isdigit() and 17 > len(mask_number) > 15:
@@ -7,7 +7,7 @@ def get_mask_card_number(card_number: int) -> str:
         raise ValueError("Ошибка ввода! Пожалуйста, введите 16-значный номер карты.")
 
 
-def get_mask_account(account_number: int) -> str:
+def get_mask_account(account_number: int | str) -> str:
     """Функция маскировки номера банковского счета"""
     mask_account = str(account_number)
     if mask_account.isdigit() and len(mask_account) >= 20:

@@ -14,11 +14,11 @@ from src.widget import get_date, mask_account_card
         ("Счет 73654108430135874305", "Счет **4305"),
     ],
 )
-def test_mask_account_card(user_card, expected):
+def test_mask_account_card(user_card: str, expected: str) -> None:
     assert mask_account_card(user_card) == expected
 
 
-def test_mask_invalid_account_card():
+def test_mask_invalid_account_card() -> None:
     with pytest.raises(ValueError):
         assert mask_account_card("")
 
@@ -31,5 +31,5 @@ def test_mask_invalid_account_card():
         ("2018-06-30T02:08:58.4255722", "30.06.2018"),
     ],
 )
-def test_get_date(user_date, result):
+def test_get_date(user_date: str, result: str) -> None:
     assert get_date(user_date) == result
