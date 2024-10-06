@@ -14,7 +14,7 @@ def new_data() -> list[dict[str, Any]]:
 
 
 @pytest.fixture
-def get_transactions() -> list[dict[str, Any]]:
+def transactions() -> list[dict[str, Any]]:
     return [
         {
             "id": 939719570,
