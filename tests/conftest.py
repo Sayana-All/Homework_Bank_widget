@@ -1,4 +1,4 @@
-from typing import Any, Iterable
+from typing import Any
 
 import pytest
 
@@ -14,7 +14,7 @@ def new_data() -> list[dict[str, Any]]:
 
 
 @pytest.fixture
-def transactions() -> list[dict[str, int | str | dict[str, str | dict [str, str]]]]:
+def transactions() -> list[dict[str, int | str | dict[str, str | dict[str, str]]]]:
     return [
         {
             "id": 939719570,
@@ -65,7 +65,7 @@ def transactions() -> list[dict[str, int | str | dict[str, str | dict [str, str]
 
 
 @pytest.fixture
-def zero_description() -> list[dict[str, int | str | dict[str, str | dict [str, str]]]]:
+def zero_description() -> list[dict[str, int | str | dict[str, str | dict[str, str]]]]:
     return [
         {
             "id": 142264268,

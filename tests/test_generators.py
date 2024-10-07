@@ -1,11 +1,9 @@
-from typing import Any
-
 import pytest
 
 from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
 
 
-def test_filter_by_currency(transactions: list[dict[str, int | str | dict[str, str | dict [str, str]]]]) -> None:
+def test_filter_by_currency(transactions: list[dict[str, int | str | dict[str, str | dict[str, str]]]]) -> None:
     usd_generator = filter_by_currency(transactions, "USD")
     assert next(usd_generator) == {
         "id": 939719570,
@@ -61,7 +59,7 @@ def test_invalid_filter_by_currency() -> None:
         assert next(filter_by_currency([], "RUB"))
 
 
-def test_transaction_descriptions(transactions: list[dict[str, int | str | dict[str, str | dict [str, str]]]]) -> None:
+def test_transaction_descriptions(transactions: list[dict[str, int | str | dict[str, str | dict[str, str]]]]) -> None:
     """Функция тестирует генератор транзакций"""
     expected_descriptions = transaction_descriptions(transactions)
     assert next(expected_descriptions) == "Перевод организации"
@@ -70,7 +68,7 @@ def test_transaction_descriptions(transactions: list[dict[str, int | str | dict[
     assert next(expected_descriptions) == "Перевод с карты на карту"
 
 
-def test_transaction_with_zero_descriptions(zero_description: list[dict[str, int | str | dict[str, str | dict [str, str]]]]) -> None:
+def test_transaction_zero_descriptions(zero_description: list[dict[str, int | str | dict[str, str | dict[str, str]]]]) -> None:
     with pytest.raises(StopIteration):
         assert next(transaction_descriptions(zero_description))
 
