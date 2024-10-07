@@ -4,6 +4,7 @@ from src.generators import card_number_generator, filter_by_currency, transactio
 
 
 def test_filter_by_currency(transactions: list[dict[str, int | str | dict[str, str | dict[str, str]]]]) -> None:
+    """Тестирование функции фильтра по заданной валюте"""
     usd_generator = filter_by_currency(transactions, "USD")
     assert next(usd_generator) == {
         "id": 939719570,
@@ -55,12 +56,13 @@ def test_filter_by_currency(transactions: list[dict[str, int | str | dict[str, s
 
 
 def test_invalid_filter_by_currency() -> None:
+    """Обработка ошибки функции filter_by_currency при получении пустого списка"""
     with pytest.raises(StopIteration):
         assert next(filter_by_currency([], "RUB"))
 
 
 def test_transaction_descriptions(transactions: list[dict[str, int | str | dict[str, str | dict[str, str]]]]) -> None:
-    """Функция тестирует генератор транзакций"""
+    """Тестирование функции генератора описаний банковский операций"""
     expected_descriptions = transaction_descriptions(transactions)
     assert next(expected_descriptions) == "Перевод организации"
     assert next(expected_descriptions) == "Перевод со счета на счет"
@@ -69,17 +71,19 @@ def test_transaction_descriptions(transactions: list[dict[str, int | str | dict[
 
 
 def test_transaction_zero_descriptions(zero_description: list[dict[str, int | str | dict[str, str | dict[str, str]]]]) -> None:
+    """Обработка ошибки, если в списке для функции transaction_descriptions нет описания"""
     with pytest.raises(StopIteration):
         assert next(transaction_descriptions(zero_description))
 
 
 def test_invalid_transaction_descriptions() -> None:
+    """Обработка ошибки функции transaction_descriptions при поучении пустого списка"""
     with pytest.raises(ValueError):
         assert next(transaction_descriptions([]))
 
 
 def test_card_number_generator() -> None:
-    """Функция тестирует генератор номеров карт"""
+    """Тестирование функции генератора номеров карт по заданному диапазону"""
     card_number = card_number_generator(1000, 1004)
     assert next(card_number) == "0000 0000 0000 1000"
     assert next(card_number) == "0000 0000 0000 1001"
