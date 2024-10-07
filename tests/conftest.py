@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, Iterable
 
 import pytest
 
@@ -14,7 +14,7 @@ def new_data() -> list[dict[str, Any]]:
 
 
 @pytest.fixture
-def transactions() -> list[dict[str, Any]]:
+def transactions() -> list[dict[str, int | str | dict[str, str | dict [str, str]]]]:
     return [
         {
             "id": 939719570,
@@ -61,4 +61,19 @@ def transactions() -> list[dict[str, Any]]:
             "from": "Visa Platinum 1246377376343588",
             "to": "Счет 14211924144426031657",
         },
+    ]
+
+
+@pytest.fixture
+def zero_description() -> list[dict[str, int | str | dict[str, str | dict [str, str]]]]:
+    return [
+        {
+            "id": 142264268,
+            "state": "EXECUTED",
+            "date": "2019-04-04T23:20:05.206878",
+            "operationAmount": {"amount": "79114.93", "currency": {"name": "USD", "code": "USD"}},
+            "description": "",
+            "from": "Счет 19708645243227258542",
+            "to": "Счет 75651667383060284188",
+        }
     ]
