@@ -1,0 +1,19 @@
+
+my_function ok
+my_function ok
+my_function ok
+my_function error: my_function() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}
+my_function error: my_function() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}
+my_function error: test_crash_log.<locals>.my_function() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}
+my_function error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (2, ''), {}
+my_function error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (2, '2'), {}
+my_function ok
+my_function error: my_function() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}
+my_function error: my_function() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}
+my_function error: my_function() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}
+my_function error: my_function() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}
+my_function error: my_function() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}
+my_function error: my_function() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}
+my_function error: my_function() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}
+my_function error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (1, 'a'), {}
+my_function error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (1, 'a'), {}my_function error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (1, 'a'), {}my_function error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (1, ''), {}my_function error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (1, ''), {}my_function error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (1, 'a'), {}my_function error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (1, 'a'), {}my_function error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (1, 'a'), {}my_function error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (1, 'a'), {}my_function error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (1, 'a'), {}my_function error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (1, 'a'), {}my_function error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (1, 'a'), {}my_function error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (1, 'a'), {}my_function error: my_function() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my_function error: my_function() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}
