@@ -2,7 +2,7 @@ import json
 from typing import Any
 
 
-def get_operations_data(file_path):
+def get_operations_data(file_path: str) -> list:
     """Обрабатывает JSON-файл и преобразует в словарь с транзакциями"""
 
     empty_data = []
@@ -20,7 +20,3 @@ def get_operations_data(file_path):
         print("Ошибка! Файл не найден")
         return empty_data
 
-
-if __name__ == "__main__":
-    data = get_operations_data(r"C:\Users\PC\PycharmProjects\Homework_Bank_widget\data\operations.json")
-    print(data)
