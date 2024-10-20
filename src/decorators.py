@@ -29,10 +29,10 @@ def log(filename):
 
 
 if __name__ == "__main__":
+
     @log(filename="mylog.txt")
     def my_function(x, y):
         """Функция суммирует два числа и возвращает результат"""
         return x + y
-
 
     my_function(1, 2)

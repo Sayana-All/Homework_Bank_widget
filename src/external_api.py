@@ -1,7 +1,8 @@
-from typing import Any
 import os
-from dotenv import load_dotenv
+from typing import Any
+
 import requests
+from dotenv import load_dotenv
 
 
 def convert_amount(currency_code: str, amount: str) -> Any:
