@@ -1,6 +1,26 @@
 from unittest.mock import patch
 
-from src.external_api import convert_amount
+from src.external_api import convert_amount, get_transaction_amount
+
+
+def test_get_transaction_amount() -> None:
+    """Тестирование функции на получение суммы операции в рублях"""
+    data_rub = {
+        "id": 587085106,
+        "state": "EXECUTED",
+        "date": "2018-03-23T10:45:06.972075",
+        "operationAmount": {"amount": "48223.05", "currency": {"name": "руб.", "code": "RUB"}},
+        "description": "Открытие вклада",
+        "to": "Счет 41421565395219882431",
+    }
+    assert get_transaction_amount(data_rub) == 48223.05
+
+
+def test_get_zero_transaction_amount() -> None:
+    """Тестирование функции на получение суммы операции в рублях"""
+    assert get_transaction_amount({}) == 0.0
+    assert get_transaction_amount([0, 1000]) == 0.0
+    assert get_transaction_amount("amount - 100") == 0.0
 
 
 @patch("requests.get")
