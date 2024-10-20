@@ -15,7 +15,7 @@ def convert_amount(currency_code: str, amount: str) -> Any:
 
         response = requests.get(url, headers=headers)
         if response.status_code != 200:
-            print(f"Ошибка запроса. Возможная причина: {response.reason}")
+            return f"Ошибка запроса. Возможная причина: {response.reason}"
         else:
             result = round(response.json()["result"], 2)
             return result
