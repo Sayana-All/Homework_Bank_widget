@@ -70,7 +70,9 @@ def test_transaction_descriptions(transactions: list[dict[str, int | str | dict[
     assert next(expected_descriptions) == "Перевод с карты на карту"
 
 
-def test_transaction_zero_descriptions(zero_description: list[dict[str, int | str | dict[str, str | dict[str, str]]]]) -> None:
+def test_transaction_zero_descriptions(
+    zero_description: list[dict[str, int | str | dict[str, str | dict[str, str]]]]
+) -> None:
     """Обработка ошибки, если в списке для функции transaction_descriptions нет описания"""
     with pytest.raises(StopIteration):
         assert next(transaction_descriptions(zero_description))
