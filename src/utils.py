@@ -11,7 +11,7 @@ file_handler = logging.FileHandler(abs_file_path, "w", encoding="utf-8")
 file_formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s: %(message)s")
 file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 
 
 def get_operations_data(file_path: str) -> list:
@@ -23,7 +23,7 @@ def get_operations_data(file_path: str) -> list:
             try:
                 operations = json.load(file)
                 if len(operations) == 0:
-                    logger.warning("Файл пустой. Невозможно преобразовать.")
+                    logger.error("Файл пустой. Невозможно преобразовать.")
                     return empty_data
                 elif len(operations) > 0:
                     logger.info("Список транзакций успешно создан.")
