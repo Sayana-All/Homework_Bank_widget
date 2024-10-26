@@ -4,9 +4,13 @@ from src.decorators import log
 
 
 @log(filename="mylog.txt")
-def my_function(x: int, y: int) -> int:
+def my_function(x: int | str, y: int | str) -> int:
     """Функция суммирует два числа и возвращает результат"""
-    return x + y
+    try:
+        return int(x) + int(y)
+    except ValueError as e:
+        print("Ошибка ввода! Пожалуйста, вводите только целые числа.")
+        raise e
 
 
 def test_log_save_file() -> None:
@@ -15,7 +19,7 @@ def test_log_save_file() -> None:
 
 
 def test_crash_log() -> None:
-    with pytest.raises(AssertionError, match="unsupported operand type(s) for +: 'int' and 'str'"):
+    with pytest.raises(ValueError, match="invalid literal for int() with base 10: 'a'"):
         my_function(1, "a")
 
 
