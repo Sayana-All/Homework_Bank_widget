@@ -1,11 +1,11 @@
 from typing import Any
 
 
-def filter_by_state(data: list[dict[str, Any]], user_state: str = "EXECUTED") -> list[dict[Any, Any]]:
+def filter_by_state(data: list[dict[str, Any]], user_state: str) -> list[dict[Any, Any]]:
     """Функция, которая фильтрует список словарей по указанному ключу"""
     sorted_list = []
     for i in data:
-        if i["state"] == user_state:
+        if i.get("state", "") == user_state:
             sorted_list.append(i)
     return sorted_list
 
