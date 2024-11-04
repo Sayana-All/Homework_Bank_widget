@@ -5,7 +5,7 @@ from src.utils import get_operations_data
 from src.widget import get_date, mask_account_card
 
 
-def main_bank_widget():
+def main():
     """Общая функция по сборке всего проекта"""
     while True:
         print(
@@ -147,4 +147,4 @@ def main_bank_widget():
 
 
 if __name__ == "__main__":
-    result = main_bank_widget()
+    result = main()
